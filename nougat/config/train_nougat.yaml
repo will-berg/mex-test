@@ -1,6 +1,6 @@
 resume_from_checkpoint_path: null # "pytorch_model.bin"
 result_path: "result"
-model_path: "facebook/nougat-base" # "pytorch_model.bin"
+model_path: "facebook/nougat-small" # "pytorch_model.bin" "facebook/nougat-base" is also an option
 dataset_paths: ["root/train.jsonl", "root/validation.jsonl"]
 tokenizer: "dataset/tokenizer.json"
 exp_name: "nougat"
@@ -27,7 +27,7 @@ min_lr: 7.5e-6
 lr_step: 16
 gamma: 0.9996
 warmup_steps: 250
-num_training_samples_per_epoch: 209 # 10000
+num_training_samples_per_epoch: 209 # 10000, what should this be set as?
 max_epochs: 30
 max_steps: -1
 val_check_interval: null

@@ -162,6 +162,7 @@ def train(config):
 
     lr_callback = LearningRateMonitor(logging_interval="step")
 
+	# Save the last checkpoint
     checkpoint_callback = ModelCheckpoint(
         save_last=True,
         dirpath=Path(config.result_path) / config.exp_name / config.exp_version,
@@ -170,14 +171,18 @@ def train(config):
     custom_ckpt = CustomCheckpointIO()
 
     # if not config.debug:
-        # logger = Logger(config.exp_name, project="Nougat", config=dict(config))
+    	# logger = Logger(config.exp_name, project="Nougat", config=dict(config))
     # else:
-    logger = TensorBoardLogger(
-        save_dir=config.result_path,
-        name=config.exp_name,
-        version=config.exp_version,
-        default_hp_metric=False,
-    )
+    # logger = TensorBoardLogger(
+        # save_dir=config.result_path,
+        # name=config.exp_name,
+        # version=config.exp_version,
+        # default_hp_metric=False,
+    # )
+
+	# Logging with Weights and Biases
+    logger = Logger(config.exp_name, project="Nougat", config=dict(config))
+
     trainer = pl.Trainer(
         num_nodes=config.get("num_nodes", 1),
         devices="auto",

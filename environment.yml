@@ -1,0 +1,44 @@
+# Dependencies for the conda environment
+name: wmex
+channels:
+  # - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - transformers>=4.25.1
+  # - timm==0.5.4
+  # - orjson
+  # - opencv
+  # - datasets[vision]
+  # - lightning<2022,>=2.0.0
+  # - nltk
+  # - python-Levenshtein
+  # - sentencepiece
+  # - albumentations>=1.0.0
+  # - pypdf>=3.1.0
+  # - fastapi
+  # - uvicorn[standard]
+  # - python-multipart
+  # - pytesseract
+  # - beautifulsoup4
+  # - scikit-learn
+  # - Pebble
+  # - pylatexenc
+  # - fuzzysearch
+  # - unidecode
+  # - htmlmin
+  # - pdfminer.six>=20221105
+  - pip
+  - pip:
+    # - sconf>=0.2.3
+    - pypdfium2
+
+  # - pip:
+    # - tensorboard
+    # - pytorch-lightning
+    # - lightning
+    # - pillow
+    # - opencv-python
+    # - timm
+    # - transformers
+    # - nltk
